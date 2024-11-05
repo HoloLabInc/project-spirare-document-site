@@ -1,0 +1,60 @@
+---
+title: '[iOS/Android] Immersal Alignment'
+sidebar_position: 2
+---
+
+import CardLink from '@site/src/components/CardLink/cardLink'
+import SpirareBrowserCloneRepository from '@site/src/components/EmbeddedContent/en/spirare-browser-clone-repository.mdx'
+import BuildSettings from '@site/docs/spirare-browser/img/spirare-browser-arfoundation-immersal_build-settings.png'
+import SpirareBrowserContentImage from '@site/docs/getting-started/img/arfoundation-immersal_spirare-browser-content.png'
+
+import SpirareBrowserLoadMap from '@site/src/components/EmbeddedContent/en/spirare-browser-arfoundation-immersal-load-map.mdx'
+import SpirareBrowserARFoundationImmersalPomlPlacement from '@site/src/components/EmbeddedContent/en/spirare-browser-arfoundation-immersal-poml-placement.mdx'
+
+# Spirare Browser Immersal (SB Immersal)
+
+Spirare Browser Immersal (display name SB Immersal) is the iOS/Android version of the Spirare Browser app that uses the Immersal for alignment.
+
+## Install from Source
+
+### Clone the Repository
+
+<SpirareBrowserCloneRepository />
+
+### Open the Unity Project
+
+Please open the `unity/SpirareBrowser-ARFoundation-Immersal` folder in the Unity Editor.
+Please use Unity version 2022.3.16f1.
+
+### Import the Immersal SDK
+
+Please download the Immersal SDK Core (.unitypackage) from the [Immersal Developer Portal](https://developers.immersal.com), then import it into the Unity project.
+
+### Build the Project
+
+Change the platform to Android or iOS, and build and deploy the application to the device.
+
+<img width="480" src={BuildSettings} />
+
+## Usage
+
+### Create an Immersal Account
+
+If you do not have an Immersal account, please create one at the [Immersal Developer Portal](https://developers.immersal.com).
+
+### Load an Immersal Map
+
+<SpirareBrowserLoadMap />
+
+### Load POML from a Network
+
+Enter the URL that delivers the POML in the side menu, and press the **Load** button.
+Entering `http://` is optional.
+
+<img width="640" class="border" src={SpirareBrowserContentImage} />
+
+### Load POML from a Local File
+
+<SpirareBrowserARFoundationImmersalPomlPlacement />
+
+The `.poml.zip` files placed in the device will be automatically loaded when the app is launched.

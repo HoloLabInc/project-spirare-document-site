@@ -1,0 +1,114 @@
+---
+title: '[iOS/Android] QR 位置合わせ'
+sidebar_position: 1
+---
+
+import CardLink from '@site/src/components/CardLink/cardLink'
+
+import SpirareBrowserAppInstallAndroid from '@site/src/components/EmbeddedContent/ja/spirare-browser-arfoundation-marker-app-install-android.mdx'
+import SpirareBrowserAppInstallIos from '@site/src/components/EmbeddedContent/ja/spirare-browser-arfoundation-marker-app-install-ios.mdx'
+
+import SpirareEditorInstall from '@site/src/components/EmbeddedContent/ja/spirare-editor-install.mdx'
+import SpirareEditorDesktopCreateSpaceScene from '@site/src/components/EmbeddedContent/ja/spirare-editor-desktop-create-space-scene.mdx'
+import SpirareEditorDesktopQRSetup from '@site/src/components/EmbeddedContent/ja/spirare-editor-desktop-qr-setup.mdx'
+import SpirareBrowserQRDetection from '@site/src/components/EmbeddedContent/ja/spirare-browser-arfoundation-marker-qr-detection.mdx'
+import GettingStartedRequiredDevices from '@site/src/components/EmbeddedContent/ja/getting-started-arfoundation-required-devices.mdx'
+import GettingStartedContentPlacement from '@site/src/components/EmbeddedContent/ja/getting-started-content-placement.mdx'
+import GettingStartedContentShare from '@site/src/components/EmbeddedContent/ja/getting-started-content-share.mdx'
+import GettingStartedLoadArContentFromSpirareEditorDesktop from '@site/src/components/EmbeddedContent/ja/getting-started-load-ar-content-from-spirare-editor-desktop.mdx'
+
+import SpirareEditorContentImage from '@site/docs/getting-started/img/arfoundation-marker_spirare-editor-content.png'
+import SpirareEditorShareButtonImage from '@site/docs/getting-started/img/arfoundation-marker_spirare-editor-share-button.png'
+import SpirareBrowserContentImage from '@site/docs/getting-started/img/arfoundation-marker_spirare-browser-content.png'
+
+Project Spirare を使って AR コンテンツの作成と表示を行う方法についてのガイドです。  
+本ガイドでは、表示端末は iOS 端末 または Android 端末を利用し、位置合わせには QR コードをマーカー画像として利用します。
+
+## 必要機材
+
+<GettingStartedRequiredDevices />
+
+また、AR 用端末と PC は同一ネットワークに接続されており、通信が許可されている必要があります。
+
+## 事前準備
+
+### Spirare Browser のインストール
+
+以下のいずれかの方法で、端末に SB Marker (マーカー位置合わせバージョンの Spirare Browser アプリ) をインストールしてください。
+
+#### ビルド済みアプリケーションのインストール (iOS)
+
+<SpirareBrowserAppInstallIos />
+
+#### ビルド済みアプリケーションのインストール (Android)
+
+<SpirareBrowserAppInstallAndroid />
+
+#### ソースからのインストール
+
+ソースからビルドする場合は [ソースからのインストール](/spirare-browser/spirare-browser-arfoundation-marker.mdx#ソースからのインストール) を参照してください。
+
+### Spirare Editor Desktop のダウンロード
+
+<SpirareEditorInstall />
+
+### QR コードの準備
+
+英数字の文字列を格納した QR コードを作成してください。  
+格納されている文字列を位置合わせにおける ID として利用します。
+
+本ガイドでは下記リンク先の PDF を印刷したものを利用しています。  
+QR コードの文字列は `QR` です。
+
+<CardLink
+  title="QR コードの PDF ファイル"
+  description="https://github.com/HoloLabInc/spirare-babylonjs/raw/190412db10dde907287c6241cf16c9f0c99827c2/_data/QR.pdf"
+  href="https://github.com/HoloLabInc/spirare-babylonjs/raw/190412db10dde907287c6241cf16c9f0c99827c2/_data/QR.pdf"
+/>
+
+## AR コンテンツの作成
+
+### シーンの作成
+
+<SpirareEditorDesktopCreateSpaceScene />
+
+### QR マーカーによる位置合わせ設定
+
+<SpirareEditorDesktopQRSetup />
+
+### オブジェクトの配置
+
+<GettingStartedContentPlacement />
+
+<img width="640" src={SpirareEditorContentImage} />
+
+### コンテンツの配信
+
+<GettingStartedContentShare />
+
+<img width="640" src={SpirareEditorShareButtonImage} />
+
+<br />
+
+Spirare Editor Desktop アプリは起動した状態のまま、次の手順に進んでください。
+
+## AR コンテンツの表示
+
+AR 用端末でマーカー位置合わせ版の Spirare Browser アプリ (表示名は`SB Marker`) を起動してください。
+
+QR コードの認識と AR コンテンツのロードを行うと、AR コンテンツが表示されます。  
+この 2 つはどちらを先に行っても構いません。
+
+### QR コードの認識
+
+<SpirareBrowserQRDetection />
+
+### AR コンテンツのロード
+
+<GettingStartedLoadArContentFromSpirareEditorDesktop />
+
+<img width="480" class="border" src={SpirareBrowserContentImage} />
+
+## 商標について
+
+QR コードは(株)デンソーウェーブの登録商標です。

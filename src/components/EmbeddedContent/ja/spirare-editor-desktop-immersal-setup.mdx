@@ -1,0 +1,20 @@
+import CardLink from '@site/src/components/CardLink/cardLink'
+import ReleasePageImage from '@site/src/components/EmbeddedContent/img/spirare-editor-install_release-page.png'
+import ImmersalModelDownloadImage from '@site/src/components/EmbeddedContent/img/immersal-model-download.png'
+import InspectorImage from '@site/src/components/EmbeddedContent/img/spirare-editor-desktop-immersal-setup_inspector.png'
+
+[Immersal Developer Portal](https://developers.immersal.com) より、位置合わせに利用したい Immersal マップの glb モデルをダウンロードしてください。
+
+<img width="860" src={ImmersalModelDownloadImage} />
+
+ダウンロードした glb モデルをアプリウィンドウにドラッグ&ドロップし、シーンに追加してください。  
+さらに、右側の **INSPECTOR** パネルにて以下のように設定してください。
+
+```
+Clickable in Editor: 無効
+AR Display Mode: hidden
+Space origin: 有効
+Space origin space id: <Immersal マップの ID>
+```
+
+<img width="860" src={InspectorImage} />

@@ -1,0 +1,89 @@
+---
+title: '[iOS/Android] Immersal Alignment'
+sidebar_position: 2
+---
+
+import CardLink from '@site/src/components/CardLink/cardLink'
+import SpirareEditorInstall from '@site/src/components/EmbeddedContent/en/spirare-editor-install.mdx'
+import SpirareEditorDesktopCreateSpaceScene from '@site/src/components/EmbeddedContent/en/spirare-editor-desktop-create-space-scene.mdx'
+import SpirareEditorDesktopImmersalSetup from '@site/src/components/EmbeddedContent/en/spirare-editor-desktop-immersal-setup.mdx'
+import ImmersalCreateMap from '@site/src/components/EmbeddedContent/en/immersal-create-map.mdx'
+import GettingStartedRequiredDevices from '@site/src/components/EmbeddedContent/en/getting-started-arfoundation-required-devices.mdx'
+import GettingStartedContentPlacement from '@site/src/components/EmbeddedContent/en/getting-started-content-placement.mdx'
+import GettingStartedContentShare from '@site/src/components/EmbeddedContent/en/getting-started-content-share.mdx'
+import SpirareBrowserLoadMap from '@site/src/components/EmbeddedContent/en/spirare-browser-arfoundation-immersal-load-map.mdx'
+import GettingStartedLoadArContentFromSpirareEditorDesktop from '@site/src/components/EmbeddedContent/en/getting-started-load-ar-content-from-spirare-editor-desktop.mdx'
+
+import SpirareEditorContentImage from '@site/docs/getting-started/img/arfoundation-immersal_spirare-editor-content.png'
+import SpirareEditorShareButtonImage from '@site/docs/getting-started/img/arfoundation-immersal_spirare-editor-share-button.png'
+import SpirareBrowserMapImage from '@site/docs/getting-started/img/arfoundation-immersal_spirare-browser-map.png'
+import SpirareBrowserContentImage from '@site/docs/getting-started/img/arfoundation-immersal_spirare-browser-content.png'
+
+This guide explains how to create and display AR content using Project Spirare.
+
+In this guide, iOS or Android devices are used as display devices, and the Immersal is utilized for alignment.
+
+## Required Devices
+
+<GettingStartedRequiredDevices />
+
+Additionally, the AR device and PC must be connected to the same network, and communication between them must be permitted.
+
+## Preparation
+
+### Install Spirare Browser
+
+You will need to build and install the Spirare Browser app for Immersal alignment (display name `SB Immersal`).
+Please refer to the [Install from Source](/spirare-browser/spirare-browser-arfoundation-immersal.mdx#install-from-source) for installation instructions.
+
+### Download Spirare Editor Desktop
+
+<SpirareEditorInstall />
+
+### Create an Immersal Account
+
+If you do not have an Immersal account, please create one at the [Immersal Developer Portal](https://developers.immersal.com).
+
+### Create an Immersal Map
+
+<ImmersalCreateMap />
+
+## Create AR Content
+
+### Create a Scene
+
+<SpirareEditorDesktopCreateSpaceScene />
+
+### Set Up an Immersal Map Alignment
+
+<SpirareEditorDesktopImmersalSetup />
+
+### Place Objects
+
+<GettingStartedContentPlacement />
+
+<img width="640" src={SpirareEditorContentImage} />
+
+### Content Delivery
+
+<GettingStartedContentShare />
+
+<img width="640" src={SpirareEditorShareButtonImage} />
+
+<br />
+
+Please proceed to the next steps with the Spirare Editor Desktop app open.
+
+## Display AR Content
+
+Please launch the Spirare Browser app for Immersal alignment (display name `SB Immersal`) on the AR device.
+
+### Load an Immersal Map
+
+<SpirareBrowserLoadMap />
+
+### Load AR Content
+
+<GettingStartedLoadArContentFromSpirareEditorDesktop />
+
+<img width="640" class="border" src={SpirareBrowserContentImage} />

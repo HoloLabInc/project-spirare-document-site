@@ -1,0 +1,65 @@
+---
+title: '[iOS/Android] Geospatial API 位置合わせ'
+sidebar_position: 3
+---
+
+import CardLink from '@site/src/components/CardLink/cardLink'
+import SpirareBrowserCloneRepository from '@site/src/components/EmbeddedContent/ja/spirare-browser-clone-repository.mdx'
+import BuildSettings from '@site/docs/spirare-browser/img/spirare-browser-arfoundation-geospatial_build-settings.png'
+import ApiKeyImage from '@site/docs/spirare-browser/img/spirare-browser-arfoundation-geospatial_arcore-api-key.png'
+import SpirareBrowserContentImage from '@site/docs/spirare-browser/img/spirare-browser-arfoundation-geospatial_network-load.png'
+
+import SpirareBrowserARFoundationGeospatialPomlPlacement from '@site/src/components/EmbeddedContent/ja/spirare-browser-arfoundation-geospatial-poml-placement.mdx'
+
+# Spirare Browser Geospatial (SB Geospatial)
+
+Spirare Browser Geospatial (表示名 SB Geospatial) は iOS/Android 用、Geospatial API 位置合わせバージョンの Spirare Browser アプリです。
+
+## ソースからのインストール
+
+### ARCore API キーの取得
+
+以下のドキュメントを参考に、Google Cloud Platform プロジェクトで ARCore API を有効にした後 API キーを取得してください。
+
+<CardLink
+  title="Google Cloud で ARCore API を使用する"
+  description="https://developers.google.com/ar/develop/authorization?platform=android&hl=ja#api-key-android"
+  href="https://developers.google.com/ar/develop/authorization?platform=android&hl=ja#api-key-android"
+/>
+
+### リポジトリのクローン
+
+<SpirareBrowserCloneRepository />
+
+### Unity プロジェクトの起動
+
+`unity/SpirareBrowser-ARFoundation-Geospatial` フォルダを Unity Editor で開いてください。  
+(Unity のバージョンは Unity 2022.3.16f1 を利用してください)
+
+### ARCore API キーの設定
+
+Unity Editor 上部メニューから **Edit** > **ProjectSettings** を選択してください。  
+表示されるウィンドウのサイドメニューにて **XR Plug-in Management** > **ARCore Extensions** を選択し、Android API Key および iOS API Key に API キーを入力してください。
+
+<img width="640" src={ApiKeyImage} />
+
+### プロジェクトのビルド
+
+プラットフォームを Android または iOS に変更し、ビルドと端末へのデプロイを行ってください。
+
+<img width="480" src={BuildSettings} />
+
+## 利用方法
+
+### ネットワークからの POML のロード
+
+サイドメニューにて POML 配信先の URLを入力し、 **Load** ボタンを押してください。  
+`http://` の入力は省略可能です。
+
+<img width="640" class="border" src={SpirareBrowserContentImage} />
+
+### ローカルファイルからの POML のロード
+
+<SpirareBrowserARFoundationGeospatialPomlPlacement />
+
+配置した `.poml.zip` ファイルはアプリ起動時に自動的にロードされます。

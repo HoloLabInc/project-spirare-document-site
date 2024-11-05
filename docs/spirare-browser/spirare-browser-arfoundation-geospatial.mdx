@@ -1,0 +1,65 @@
+---
+title: '[iOS/Android] Geospatial API Alignment'
+sidebar_position: 3
+---
+
+import CardLink from '@site/src/components/CardLink/cardLink'
+import SpirareBrowserCloneRepository from '@site/src/components/EmbeddedContent/en/spirare-browser-clone-repository.mdx'
+import BuildSettings from '@site/docs/spirare-browser/img/spirare-browser-arfoundation-geospatial_build-settings.png'
+import ApiKeyImage from '@site/docs/spirare-browser/img/spirare-browser-arfoundation-geospatial_arcore-api-key.png'
+import SpirareBrowserContentImage from '@site/docs/spirare-browser/img/spirare-browser-arfoundation-geospatial_network-load.png'
+
+import SpirareBrowserARFoundationGeospatialPomlPlacement from '@site/src/components/EmbeddedContent/en/spirare-browser-arfoundation-geospatial-poml-placement.mdx'
+
+# Spirare Browser Geospatial (SB Geospatial)
+
+Spirare Browser Geospatial (display name SB Geospatial) is the iOS/Android version of the Spirare Browser app that uses the Geospatial API for alignment.
+
+## Install from Source
+
+### Obtain an ARCore API Key
+
+Please refer to the following documentation to enable the ARCore API and obtain an API key in your Google Cloud Platform project.
+
+<CardLink
+  title="Use the ARCore API on Google Cloud"
+  description="https://developers.google.com/ar/develop/authorization?platform=android#api-key-android"
+  href="https://developers.google.com/ar/develop/authorization?platform=android#api-key-android"
+/>
+
+### Clone the Repository
+
+<SpirareBrowserCloneRepository />
+
+### Open the Unity Project
+
+Please open the `unity/SpirareBrowser-ARFoundation-Geospatial` folder in the Unity Editor.
+Please use Unity version 2022.3.16f1.
+
+### Configure the ARCore API Key
+
+Select **Edit** > **Project Settings** from the top menu in the Unity Editor.
+In the window that appears, select **XR Plug-in Management** > **ARCore Extensions** from the side menu, and enter your API key for the **Android API Key** and **iOS API Key** fields.
+
+<img width="640" src={ApiKeyImage} />
+
+### Build the Project
+
+Change the platform to Android or iOS, and build and deploy the application to the device.
+
+<img width="480" src={BuildSettings} />
+
+## Usage
+
+### Load POML from a Network
+
+Enter the URL that delivers the POML in the side menu, and press the **Load** button.
+Entering `http://` is optional.
+
+<img width="640" class="border" src={SpirareBrowserContentImage} />
+
+### Load POML from a Local File
+
+<SpirareBrowserARFoundationGeospatialPomlPlacement />
+
+The `.poml.zip` files placed in the device will be automatically loaded when the app is launched.

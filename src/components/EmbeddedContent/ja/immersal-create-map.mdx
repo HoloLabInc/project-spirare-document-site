@@ -1,0 +1,30 @@
+import CardLink from '@site/src/components/CardLink/cardLink'
+import ImmersalMapperTakePhotoImage from '@site/src/components/EmbeddedContent/img/immersal-mapper_take-photo.png'
+import ImmersalMapperUploadImagesImage from '@site/src/components/EmbeddedContent/img/immersal-mapper_upload-images.png'
+
+AR 表示を行いたいエリアの Immersal マップを作成します。
+
+マップ作成には Immersal Mapper というアプリケーションを利用します。  
+詳しくは以下の公式ページをご覧ください。
+
+<CardLink
+  title="Immersal Mapper"
+  description="https://developers.immersal.com/docs/mapsmapping/howtomap/mapper-2.0"
+  href="https://developers.immersal.com/docs/mapsmapping/howtomap/mapper-2.0"
+/>
+
+<br />
+
+<img width="320" src={ImmersalMapperTakePhotoImage} />
+
+<img width="320" src={ImmersalMapperUploadImagesImage} />
+
+<br />
+<br />
+
+:::info
+
+マップ作成時は Realtime Mode ではなく Manual Mode を選択してください。  
+Realtime Mode ではマップのメッシュモデルが作成されません。
+
+:::

@@ -1,0 +1,70 @@
+---
+title: '[iOS/Android] QR Alignment'
+sidebar_position: 1
+---
+
+import CardLink from '@site/src/components/CardLink/cardLink'
+
+import SpirareBrowserAppInstallAndroid from '@site/src/components/EmbeddedContent/en/spirare-browser-arfoundation-marker-app-install-android.mdx'
+import SpirareBrowserAppInstallIos from '@site/src/components/EmbeddedContent/en/spirare-browser-arfoundation-marker-app-install-ios.mdx'
+
+import SpirareBrowserCloneRepository from '@site/src/components/EmbeddedContent/en/spirare-browser-clone-repository.mdx'
+import SpirareBrowserQRDetection from '@site/src/components/EmbeddedContent/en/spirare-browser-arfoundation-marker-qr-detection.mdx'
+import BuildSettings from '@site/docs/spirare-browser/img/spirare-browser-arfoundation-marker_build-settings.png'
+import SpirareBrowserContentImage from '@site/docs/getting-started/img/arfoundation-marker_spirare-browser-content.png'
+
+import SpirareBrowserARFoundationMarkerPomlPlacement from '@site/src/components/EmbeddedContent/en/spirare-browser-arfoundation-marker-poml-placement.mdx'
+
+# Spirare Browser Marker (SB Marker)
+
+Spirare Browser Marker (display name SB Marker) is the iOS/Android version of the Spirare Browser app that uses the QR Codes for alignment.
+
+## Install Prebuilt Application
+
+### For iOS Devices
+
+<SpirareBrowserAppInstallIos />
+
+### For Android Devices
+
+<SpirareBrowserAppInstallAndroid />
+
+## Install from Source
+
+### Clone the Repository
+
+<SpirareBrowserCloneRepository />
+
+### Open the Unity Project
+
+Please open the `unity/SpirareBrowser-ARFoundation-Marker` folder in the Unity Editor.
+Please use Unity version 2022.3.16f1.
+
+### Build the Project
+
+Change the platform to Android or iOS, and build and deploy the application to the device.
+
+<img width="480" src={BuildSettings} />
+
+## Usage
+
+### Detect QR Codes
+
+<SpirareBrowserQRDetection />
+
+### Load POML from a Network
+
+Enter the URL that delivers the POML in the side menu, and press the **Load** button.
+Entering `http://` is optional.
+
+<img width="480" class="border" src={SpirareBrowserContentImage} />
+
+### Load POML from a Local File
+
+<SpirareBrowserARFoundationMarkerPomlPlacement />
+
+The `.poml.zip` files placed in the device will be automatically loaded when the app is launched.
+
+## About Trademarks
+
+QR Code is registered trademark of DENSO WAVE INCORPORATED.

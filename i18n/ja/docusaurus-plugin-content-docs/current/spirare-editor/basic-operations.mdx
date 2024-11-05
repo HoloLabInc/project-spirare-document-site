@@ -1,0 +1,84 @@
+import AddObjectMenuImage from '@site/docs/spirare-editor/img/basic-operations_add-object-menu.png'
+import ObjectSelectionImage from '@site/docs/spirare-editor/img/basic-operations_object-selection.png'
+import ObjectSelectionInspectorImage from '@site/docs/spirare-editor/img/basic-operations_object-selection-inspector.png'
+import ScaleGizmoImage from '@site/docs/spirare-editor/img/basic-operations_scale-gizmo.png'
+import DisposeObjectImage from '@site/docs/spirare-editor/img/basic-operations_dispose-object.png'
+
+# 基本操作
+
+## カメラ操作
+
+| 操作方法                        | 動作           |
+| ------------------------------- | -------------- |
+| 右クリック + マウスカーソル操作 | カメラの回転   |
+| 中クリック + マウスカーソル操作 | カメラの移動   |
+| マウスホイール                  | カメラのズーム |
+
+## 編集コマンド
+
+| 操作方法 | 動作                    |
+| -------- | ----------------------- |
+| Ctrl + Z | オブジェクト操作の Undo |
+| Ctrl + Y | オブジェクト操作の Redo |
+
+## オブジェクトの追加
+
+ファイルをドラッグ & ドロップするか、**Add new...** > **Local File...** を選択しファイルを選択してください。  
+対応しているファイルフォーマットであれば、シーンにオブジェクトが追加されます。
+
+また、テキストを追加する場合は **Add new...** > **Text** を選択してください。
+
+<img width="320" src={AddObjectMenuImage} />
+
+### 配置可能なファイルフォーマット
+
+以下のファイルフォーマットが配置可能です。
+
+- 3D モデル
+  - .glb
+  - .splat
+  - .ply
+- 画像
+  - .png
+  - .jpeg (.jpg)
+  - .gif
+- 動画
+  - .mp4
+
+## オブジェクトの操作
+
+シーン上のオブジェクトをクリックするか、**INSPECTOR** にてオブジェクトのデータを選択した状態で **Select** ボタンを押すと、シーン上のオブジェクトが選択状態となります。
+
+<img width="180" src={ObjectSelectionInspectorImage} />
+
+<br />
+
+<img width="320" src={ObjectSelectionImage} />
+
+<br />
+<br />
+
+オブジェクトが選択された状態で以下のキーを入力するとオブジェクトを操作するためのギズモが表示されます。  
+ギズモは左クリックによるドラッグで操作できます。
+
+| 操作方法 | 動作                     |
+| -------- | ------------------------ |
+| Q        | ギズモの表示オフ         |
+| W        | 移動用ギズモ表示         |
+| E        | 回転用ギズモ表示         |
+| R        | スケール変更用ギズモ表示 |
+
+:::tip
+
+スケール変更用ギズモの中心にある白い部分を操作すると、XYZ のすべての方向に均等にスケーリングできます。  
+このギズモは左右ではなく上下方向にドラッグしてください。
+
+<img width="320" src={ScaleGizmoImage} />
+
+:::
+
+## オブジェクトの削除
+
+オブジェクトを選択した状態で、**INSPECTOR** の **GENERAL** 欄下部にある **Dispose** ボタンを押してください。
+
+<img width="180" src={DisposeObjectImage} />

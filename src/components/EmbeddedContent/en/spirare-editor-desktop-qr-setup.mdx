@@ -1,0 +1,28 @@
+import CardLink from '@site/src/components/CardLink/cardLink'
+import ReleasePageImage from '@site/src/components/EmbeddedContent/img/spirare-editor-install_release-page.png'
+import Inspector1 from '@site/src/components/EmbeddedContent/img/spirare-editor-desktop-qr-setup_inspector-1.png'
+import Inspector2 from '@site/src/components/EmbeddedContent/img/spirare-editor-desktop-qr-setup_inspector-2.png'
+import Inspector3 from '@site/src/components/EmbeddedContent/img/spirare-editor-desktop-qr-setup_inspector-3.png'
+
+Please download the QR code glb model from the link below:
+
+<CardLink
+  title="QR code glb model"
+  description="https://github.com/HoloLabInc/spirare-babylonjs/raw/190412db10dde907287c6241cf16c9f0c99827c2/_data/QR.glb"
+  href="https://github.com/HoloLabInc/spirare-babylonjs/raw/190412db10dde907287c6241cf16c9f0c99827c2/_data/QR.glb"
+/>
+
+Drag and drop the downloaded glb model into the app window in order to add it to the scene.
+Furthermore, please set the following in the **INSPECTOR** panel on the right side.
+
+```
+Clickable in Editor: Disabled
+AR Display Mode: hidden
+Space origin: Enabled
+Space origin space id: <String stored in QR code>
+Scaling: <Approximate size of QR code>
+```
+
+<img width="640" src={Inspector1} />
+<img width="640" src={Inspector2} />
+<img width="640" src={Inspector3} />
