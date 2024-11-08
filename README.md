@@ -4,6 +4,8 @@ This repository is for the documentation site of Project Spirare.
 
 You can access the documentation site from the following link.
 
+https://docs.spirare.hololab.co.jp
+
 ## Development
 
 If you want to run the documentation site in your environment, please use the following commands.
