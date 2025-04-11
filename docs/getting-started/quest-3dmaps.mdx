@@ -1,0 +1,81 @@
+---
+title: '[Quest] 3D Maps'
+sidebar_position: 4
+---
+
+import CardLink from '@site/src/components/CardLink/cardLink'
+import SpirareEditorInstall from '@site/src/components/EmbeddedContent/en/spirare-editor-install.mdx'
+import SpirareEditorDesktopCreateGeodeticScene from '@site/src/components/EmbeddedContent/en/spirare-editor-desktop-create-geodetic-scene.mdx'
+import SpirareEditorDesktopGeoCameraTarget from '@site/src/components/EmbeddedContent/en/spirare-editor-desktop-geo-camera-target.mdx'
+import SpirareBrowserARFoundationGeospatialPomlPlacement from '@site/src/components/EmbeddedContent/en/spirare-browser-arfoundation-geospatial-poml-placement.mdx'
+import GettingStartedRequiredDevices from '@site/src/components/EmbeddedContent/en/getting-started-arfoundation-required-devices.mdx'
+import GettingStartedContentPlacement from '@site/src/components/EmbeddedContent/en/getting-started-content-placement.mdx'
+import GettingStartedContentExport from '@site/src/components/EmbeddedContent/en/getting-started-content-export.mdx'
+
+import SpirareEditorContentImage from '@site/docs/getting-started/img/arfoundation-geospatial_spirare-editor-content.png'
+import SpirareEditorExportButtonImage from '@site/docs/getting-started/img/arfoundation-geospatial_spirare-editor-export.png'
+import SpirareBrowserContentImage from '@site/docs/getting-started/img/arfoundation-geospatial_spirare-browser-content.png'
+
+This guide explains how to create and display AR content using Project Spirare.
+
+In this guide, iOS or Android devices are used as display devices, and the Geospatial API is utilized for alignment.
+
+## Required Devices
+
+<GettingStartedRequiredDevices />
+
+## Preparation
+
+### Install Spirare Browser
+
+You will need to build and install the Spirare Browser app for Geospatial API alignment (display name `SB Geospatial`).
+Please refer to the [Install from Source](/spirare-browser/spirare-browser-arfoundation-geospatial.mdx#install-from-source) for installation instructions.
+
+### Download Spirare Editor Desktop
+
+<SpirareEditorInstall />
+
+## Create AR Content
+
+### Create a Scene
+
+<SpirareEditorDesktopCreateGeodeticScene />
+
+### Change Camera Position
+
+<SpirareEditorDesktopGeoCameraTarget />
+
+### Place Objects
+
+<GettingStartedContentPlacement />
+
+<img width="640" src={SpirareEditorContentImage} />
+
+### Export Content
+
+<GettingStartedContentExport />
+
+<img width="640" src={SpirareEditorExportButtonImage} />
+
+## Place Content Files
+
+Place the exported `.poml.zip` file on the AR device.
+
+<SpirareBrowserARFoundationGeospatialPomlPlacement />
+
+## Display AR Content
+
+Please launch the Spirare Browser app for Geospatial API alignment on the AR device (display name `SB Geospatial`).
+The `.poml.zip` file placed in the device according to the previous steps will be automatically loaded when the app is launched.
+
+<img width="640" class="border" src={SpirareBrowserContentImage} />
+<br />
+<br />
+
+:::info
+
+The content files placed in the device while the app is running will not be loaded until the app is restarted.
+If the content placed in the device does not display, try restarting the app.
+
+:::
+
