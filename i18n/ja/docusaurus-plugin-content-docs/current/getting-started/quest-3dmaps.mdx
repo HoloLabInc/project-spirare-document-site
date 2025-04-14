@@ -11,11 +11,12 @@ import SpirareBrowserARFoundationGeospatialPomlPlacement from '@site/src/compone
 import GettingStartedRequiredDevices from '@site/src/components/EmbeddedContent/ja/getting-started-quest-required-devices.mdx'
 import GettingStartedContentPlacement from '@site/src/components/EmbeddedContent/ja/getting-started-content-placement-3dmaps.mdx'
 import GettingStartedContentExport from '@site/src/components/EmbeddedContent/ja/getting-started-content-export.mdx'
+import GettingStartedContentShare from '@site/src/components/EmbeddedContent/ja/getting-started-content-share.mdx'
 
 import SpirareEditorContentImage from '@site/docs/getting-started/img/arfoundation-geospatial_spirare-editor-content.png'
 import SpirareEditorExportButtonImage from '@site/docs/getting-started/img/arfoundation-geospatial_spirare-editor-export.png'
 import SpirareBrowserContentImage from '@site/docs/getting-started/img/arfoundation-geospatial_spirare-browser-content.png'
-import SpirareEditorContentShareImage from '@site/docs/getting-started/img/spirare-browser_geo-placement-content-share.png'
+import SpirareEditorContentShareImage from '@site/docs/spirare-editor/img/geo-placement-content-share.png'
 
 Project Spirare を使って 3D コンテンツの作成と表示を行う方法についてのガイドです。  
 本ガイドでは、表示端末は Meta Quest を利用し、3D 地図上に 3D コンテンツを表示します。
@@ -23,6 +24,8 @@ Project Spirare を使って 3D コンテンツの作成と表示を行う方法
 ## 必要機材
 
 <GettingStartedRequiredDevices />
+
+また、Meta Quest と PC は同一ネットワークに接続されており、通信が許可されている必要があります。
 
 ## 事前準備
 
@@ -51,29 +54,22 @@ Project Spirare を使って 3D コンテンツの作成と表示を行う方法
 
 <img width="640" src={SpirareEditorContentImage} />
 
-### コンテンツのエクスポート
+### コンテンツの配信
 
-<img width="640" src={SpirareEditorExportButtonImage} />
+<GettingStartedContentShare />
+
 <img width="640" src={SpirareEditorContentShareImage} />
 
-## コンテンツファイルの配置
+<br />
 
-エクスポートした `.poml.zip` ファイルを AR 用端末に配置します。
-
-<SpirareBrowserARFoundationGeospatialPomlPlacement />
+Spirare Editor Desktop アプリは起動した状態のまま、次の手順に進んでください。
 
 ## AR コンテンツの表示
 
-AR 用端末で Geospatial API 位置合わせ版の Spirare Browser アプリ (表示名は `SB Geospatial`) を起動してください。  
+Meta Quest で 3D マップ版の Spirare Browser アプリ (表示名 `Spirare Browser 3DMaps`) を起動してください。  
 上記手順で端末内に配置した `.poml.zip` ファイルはアプリ起動時に自動的にロードされます。
 
 <img width="640" class="border" src={SpirareBrowserContentImage} />
 <br />
 <br />
 
-:::info
-
-アプリ起動中に端末内に配置したコンテンツファイルはアプリを再起動するまでロードされません。  
-端末内に配置したコンテンツが表示されない場合はアプリの再起動を試してみてください。
-
-:::
