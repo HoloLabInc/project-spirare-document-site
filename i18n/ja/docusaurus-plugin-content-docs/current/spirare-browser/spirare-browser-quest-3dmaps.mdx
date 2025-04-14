@@ -6,8 +6,13 @@ sidebar_position: 4
 import CardLink from '@site/src/components/CardLink/cardLink'
 
 import SpirareBrowserCloneRepository from '@site/src/components/EmbeddedContent/ja/spirare-browser-clone-repository.mdx'
+
 import BuildSettings from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_build-settings.png'
 import SpirareBrowserContentImage from '@site/docs/getting-started/img/arfoundation-marker_spirare-browser-content.png'
+import SpirareBrowserControllersImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_controllers.png'
+import SpirareBrowserManagementPageTopImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_management-page-top.png'
+import SpirareBrowserManagementPagePomlLoadedImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_management-page-poml-loaded.png'
+import SpirareBrowserManagementPageMapImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_management-page-map.png'
 
 import SpirareBrowserQuest3DMapsPomlPlacement from '@site/src/components/EmbeddedContent/ja/spirare-browser-quest-3dmaps-poml-placement.mdx'
 
@@ -39,14 +44,29 @@ Meta Quest (Meta Quest 3 / Meta Quest 3S)
 
 ### マップの操作
 
+コントローラーでマップ土台の側面を操作することで、マップオブジェクトの移動、回転、拡大縮小ができます。  
+また、コントローラーでマップ土台の上面を操作することで、マップ表示範囲の移動や拡大縮小ができます。
+
+<img width="640" class="border" src={SpirareBrowserControllersImage} />
+
+### 管理ページの表示
+
+PC のブラウザで `http://<Meta Quest の IP アドレス>:8080` にアクセスし、管理ページを表示してください。  
+Meta Quest の IP アドレスは、Meta Qeust の設定メニューにて Wi-Fi を選択し、現在接続しているネットワークを選択することで確認できます。
+
+<img width="640" src={SpirareBrowserManagementPageTopImage} />
+
+### 管理ページでのマップ設定変更
+
+管理ページトップにて **Settings Page for Map** のリンクをクリックし、マップ設定ページに遷移してください。  
+
+<img width="640" src={SpirareBrowserManagementPageMapImage} />
+
 ### ネットワークからの POML のロード
 
-TBD
+管理ページの POML URL の入力欄に POML 配信先の URL を入力し、Load ボタンを押してください。
 
-サイドメニューにて POML 配信先の URLを入力し、 **Load** ボタンを押してください。  
-`http://` の入力は省略可能です。
-
-<img width="480" class="border" src={SpirareBrowserContentImage} />
+<img width="640" src={SpirareBrowserManagementPagePomlLoadedImage} />
 
 ### ローカルファイルからの POML のロード
 
