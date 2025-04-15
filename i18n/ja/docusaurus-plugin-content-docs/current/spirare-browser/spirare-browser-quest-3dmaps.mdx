@@ -13,6 +13,7 @@ import SpirareBrowserControllersImage from '@site/docs/spirare-browser/img/spira
 import SpirareBrowserManagementPageTopImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_management-page-top.png'
 import SpirareBrowserManagementPagePomlLoadedImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_management-page-poml-loaded.png'
 import SpirareBrowserManagementPageMapImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_management-page-map.png'
+import UnityPhotorealistic3DTilesSettingsImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_unity-photorealistic-3dtiles-settings.png'
 
 import SpirareBrowserQuest3DMapsPomlPlacement from '@site/src/components/EmbeddedContent/ja/spirare-browser-quest-3dmaps-poml-placement.mdx'
 
@@ -33,6 +34,29 @@ Meta Quest (Meta Quest 3 / Meta Quest 3S)
 
 `unity/SpirareBrowser-Quest-3DMaps` フォルダを Unity Editor で開いてください。  
 (Unity のバージョンは Unity 2022.3.16f1 を利用してください)
+
+### ベースマップの設定
+
+アプリケーションで表示するマップオブジェクトは `Assets\Resources\Spirare\BaseMapSettings.asset` で設定します。
+
+#### Google Photorealistic 3D Tiles
+
+初期状態では Google が提供する Photorealistic 3D Tiles を利用するオブジェクトが設定されていますが、利用するためには API キーの設定が必要です。  
+以下のドキュメントを参考に、API キーを取得してください。
+
+<CardLink
+  title="Map Tiles API で API キーを使用する"
+  description="https://developers.google.com/maps/documentation/tile/get-api-key?hl=ja"
+  href="https://developers.google.com/maps/documentation/tile/get-api-key?hl=ja"
+/>
+
+<br/>
+
+キーが取得できたら、`Assets\Resources\Spirare\GooglePhotorealistic3DTilesSourceSettings.asset` の URL 欄に以下のように設定してください（`<Your API Key>` の部分は取得した API キーに置き換えてください）。
+
+`https://tile.googleapis.com/v1/3dtiles/root.json?key=<Your API Key>`
+
+<img width="480" src={UnityPhotorealistic3DTilesSettingsImage} />
 
 ### プロジェクトのビルド
 
@@ -66,6 +90,8 @@ Meta Quest の IP アドレスは、Meta Qeust の設定メニューにて Wi-Fi
 
 #### ベースマップの変更
 **Base map** では、...
+
+TBD
 
 #### マップ表示範囲の変更
 
