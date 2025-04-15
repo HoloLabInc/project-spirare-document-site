@@ -15,6 +15,13 @@ import SpirareBrowserManagementPagePomlLoadedImage from '@site/docs/spirare-brow
 import SpirareBrowserManagementPageMapImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_management-page-map.png'
 import UnityPhotorealistic3DTilesSettingsImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_unity-photorealistic-3dtiles-settings.png'
 
+import UnityPLATEAUBingMapsAssetImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_unity-PLATEAU-BingMaps-asset.png'
+import UnityPLATEAUBingMapsInspector1Image from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_unity-PLATEAU-BingMaps-inspector1.png'
+import UnityPLATEAUBingMapsInspector2Image from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_unity-PLATEAU-BingMaps-inspector2.png'
+import UnityPLATEAUBingMapsMapSettingsImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_unity-PLATEAU-BingMaps-map-settings.png'
+
+import UnityPLATEAUGSIstdAssetImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_unity-PLATEAU-GSI-std-asset.png'
+
 import SpirareBrowserQuest3DMapsPomlPlacement from '@site/src/components/EmbeddedContent/ja/spirare-browser-quest-3dmaps-poml-placement.mdx'
 
 # Spirare Browser 3DMaps
@@ -57,6 +64,45 @@ Meta Quest (Meta Quest 3 / Meta Quest 3S)
 `https://tile.googleapis.com/v1/3dtiles/root.json?key=<Your API Key>`
 
 <img width="480" src={UnityPhotorealistic3DTilesSettingsImage} />
+
+#### PLATEAU 地形データと Bing Maps （オプション）
+
+PLATEAU 地形データと Bing Maps による地図データの組み合わせをベースマップとして利用したい場合は以下の手順を行ってください。
+
+`Packages\Spirare Cesium 3D Maps\Prefabs\PLATEAU` フォルダ内の `Tileset_PLATEAU-BingMaps.prefab` を選択してください。
+
+<img width="480" src={UnityPLATEAUBingMapsAssetImage} />
+
+**Inspector** タブで **Cesium 3D Tileset** コンポーネントおよび **Cesium Ion Raster Overlay** コンポーネントの **ion Access Token** 欄に Cesium ion のアクセストークンを入力してください。  
+入力するアクセストークンはお手持ちのアカウントのものを利用するか、
+[PLATEAU配信サービス](https://github.com/Project-PLATEAU/plateau-streaming-tutorial/blob/main/terrain/plateau-terrain-streaming.md#2-plateau-terrain%E3%81%AE%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95)にて提供されているアクセストークンをご利用ください。
+
+<img width="360" src={UnityPLATEAUBingMapsInspector1Image} />
+<br/>
+<img width="360" src={UnityPLATEAUBingMapsInspector2Image} />
+
+トークンの設定ができたら、`Assets\Resources\Spirare\BaseMapSettings.asset` を選択し、`PLATEAU Bing Maps` の項目を追加してください。
+
+- **Map Name**
+  - PLATEAU Bing Maps
+- **Map Prefab**
+  - `Tileset_PLATEAU-BingMaps.prefab`
+- **Credit Prefab**
+  - `CesiumRectangleMapCredit_PLATEAU-BingMaps.prefab`
+
+`Tileset_PLATEAU-BingMaps.prefab` および `CesiumRectangleMapCredit_PLATEAU-BingMaps.prefab` は、`Packages\Spirare Cesium 3D Maps\Prefabs\PLATEAU` フォルダ内にあります。
+
+<img width="480" src={UnityPLATEAUBingMapsMapSettingsImage} />
+
+`BaseMapSettings` に複数のベースマップが設定されている場合、[管理ページを使って表示するマップを切り替える](#管理ページでのマップ設定変更)ことができます。
+
+#### PLATEAU 地形データと地理院タイル
+
+PLATEAU 地形データと地理院タイルによる地図データの組み合わせをベースマップとして利用したい場合は以下の手順を行ってください。
+
+`Packages\Spirare Cesium 3D Maps\Prefabs\PLATEAU` フォルダ内の `Tileset_PLATEAU-GSI-std.prefab` を選択してください。
+
+<img width="480" src={UnityPLATEAUGSIstdAssetImage} />
 
 ### プロジェクトのビルド
 
