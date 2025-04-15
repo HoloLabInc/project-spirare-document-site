@@ -14,6 +14,9 @@ import GettingStartedContentShare from '@site/src/components/EmbeddedContent/en/
 import SpirareEditorContentImage from '@site/docs/getting-started/img/arfoundation-geospatial_spirare-editor-content.png'
 import SpirareEditorContentShareImage from '@site/docs/spirare-editor/img/geo-placement-content-share.png'
 import SpirareBrowserContentImage from '@site/docs/getting-started/img/arfoundation-geospatial_spirare-browser-content.png'
+import SpirareBrowserControllersImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_controllers.png'
+import SpirareBrowserManagementPageTopImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_management-page-top.png'
+import SpirareBrowserManagementPagePomlLoadedImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_management-page-poml-loaded.png'
 
 This guide explains how to create and display 3D content using Project Spirare.
 
@@ -58,19 +61,27 @@ Please refer to the [Install from Source](/spirare-browser/spirare-browser-quest
 
 Please proceed to the next steps with the Spirare Editor Desktop app open.
 
-## Display AR Content
+## Display 3D Content
 
-Please launch the Spirare Browser app for Geospatial API alignment on the AR device (display name `SB Geospatial`).
-The `.poml.zip` file placed in the device according to the previous steps will be automatically loaded when the app is launched.
+### Check the Meta Quest IP Address
+
+In the Settings menu, select Wi-Fi, then choose the network you are currently connected to.
+Check the IP address which is displayed in the details of the connected network.
+
+### Launch the Spirare Browser App
+
+Please launch the 3D map version of the Spirare Browser app (display name `Spirare Browser 3DMaps`) on the Meta Quest.
+
+By operating the side of the map base with the controller, you can move, rotate, and scale the map object.  
+By operating the top of the map base with the controller, you can move and zoom the displayed area of the map.
+
+<img width="640" class="border" src={SpirareBrowserControllersImage} />
+
+### TBD
+
+<img width="640" src={SpirareBrowserManagementPageTopImage} />
+
+<img width="640" src={SpirareBrowserManagementPagePomlLoadedImage} />
 
 <img width="640" class="border" src={SpirareBrowserContentImage} />
 <br />
-<br />
-
-:::info
-
-The content files placed in the device while the app is running will not be loaded until the app is restarted.
-If the content placed in the device does not display, try restarting the app.
-
-:::
-
