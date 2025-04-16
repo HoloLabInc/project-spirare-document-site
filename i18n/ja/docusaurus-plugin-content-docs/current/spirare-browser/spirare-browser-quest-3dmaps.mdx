@@ -1,0 +1,184 @@
+---
+title: '[Meta Quest] 3D マップ'
+sidebar_position: 4
+---
+
+import CardLink from '@site/src/components/CardLink/cardLink'
+
+import SpirareBrowserCloneRepository from '@site/src/components/EmbeddedContent/ja/spirare-browser-clone-repository.mdx'
+
+import BuildSettings from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_build-settings.png'
+import SpirareBrowserContentImage from '@site/docs/getting-started/img/arfoundation-marker_spirare-browser-content.png'
+import SpirareBrowserControllersImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_controllers.png'
+import SpirareBrowserManagementPageTopImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_management-page-top.png'
+import SpirareBrowserManagementPagePomlLoadedImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_management-page-poml-loaded.png'
+import SpirareBrowserManagementPageMapImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_management-page-map.png'
+import UnityPhotorealistic3DTilesSettingsImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_unity-photorealistic-3dtiles-settings.png'
+
+import UnityPLATEAUBingMapsAssetImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_unity-PLATEAU-BingMaps-asset.png'
+import UnityPLATEAUBingMapsInspector1Image from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_unity-PLATEAU-BingMaps-inspector1.png'
+import UnityPLATEAUBingMapsInspector2Image from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_unity-PLATEAU-BingMaps-inspector2.png'
+import UnityPLATEAUBingMapsMapSettingsImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_unity-PLATEAU-BingMaps-map-settings.png'
+
+import UnityPLATEAUGSIstdAssetImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_unity-PLATEAU-GSI-std-asset.png'
+import UnityPLATEAUGSIstdInspectorImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_unity-PLATEAU-GSI-std-inspector.png'
+import UnityPLATEAUGSIstdMapSettingsImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_unity-PLATEAU-GSI-std-map-settings.png'
+
+import SpirareBrowserQuest3DMapsPomlPlacement from '@site/src/components/EmbeddedContent/ja/spirare-browser-quest-3dmaps-poml-placement.mdx'
+
+# Spirare Browser 3DMaps
+
+Spirare Browser 3DMaps は Meta Quest 用、3D マップ表示バージョンの Spirare Browser アプリです。
+
+## 対象端末
+Meta Quest (Meta Quest 3 / Meta Quest 3S)
+
+## ソースからのインストール
+
+### リポジトリのクローン
+
+<SpirareBrowserCloneRepository />
+
+### Unity プロジェクトの起動
+
+`unity/SpirareBrowser-Quest-3DMaps` フォルダを Unity Editor で開いてください。  
+(Unity のバージョンは Unity 2022.3.16f1 を利用してください)
+
+### ベースマップの設定
+
+アプリケーションで表示するマップオブジェクトは `Assets\Resources\Spirare\BaseMapSettings.asset` で設定します。
+
+#### Google Photorealistic 3D Tiles
+
+初期状態では Google が提供する Photorealistic 3D Tiles を利用するオブジェクトが設定されていますが、利用するためには API キーの設定が必要です。  
+以下のドキュメントを参考に、API キーを取得してください。
+
+<CardLink
+  title="Map Tiles API で API キーを使用する"
+  description="https://developers.google.com/maps/documentation/tile/get-api-key?hl=ja"
+  href="https://developers.google.com/maps/documentation/tile/get-api-key?hl=ja"
+/>
+
+<br/>
+
+キーが取得できたら、`Assets\Resources\Spirare\GooglePhotorealistic3DTilesSourceSettings.asset` の URL 欄に以下のように設定してください（`<Your API Key>` の部分は取得した API キーに置き換えてください）。
+
+`https://tile.googleapis.com/v1/3dtiles/root.json?key=<Your API Key>`
+
+<img width="480" src={UnityPhotorealistic3DTilesSettingsImage} />
+
+#### PLATEAU 地形データと Bing Maps（オプション）
+
+PLATEAU 地形データと Bing Maps による地図データの組み合わせをベースマップとして利用したい場合は以下の手順を行ってください。
+
+`Packages\Spirare Cesium 3D Maps\Prefabs\PLATEAU` フォルダ内の `Tileset_PLATEAU-BingMaps.prefab` を選択してください。
+
+<img width="480" src={UnityPLATEAUBingMapsAssetImage} />
+
+**Inspector** タブで **Cesium 3D Tileset** コンポーネントおよび **Cesium Ion Raster Overlay** コンポーネントの **ion Access Token** 欄に Cesium ion のアクセストークンを入力してください。  
+入力するアクセストークンはお手持ちのアカウントのものを利用するか、
+[PLATEAU配信サービス](https://github.com/Project-PLATEAU/plateau-streaming-tutorial/blob/main/terrain/plateau-terrain-streaming.md#2-plateau-terrain%E3%81%AE%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95)にて提供されているアクセストークンをご利用ください。
+
+<img width="360" src={UnityPLATEAUBingMapsInspector1Image} />
+<br/>
+<img width="360" src={UnityPLATEAUBingMapsInspector2Image} />
+
+トークンの設定ができたら、`Assets\Resources\Spirare\BaseMapSettings.asset` を選択し、`PLATEAU Bing Maps` の項目を追加してください。
+
+- **Map Name**
+  - PLATEAU Bing Maps
+- **Map Prefab**
+  - `Tileset_PLATEAU-BingMaps.prefab`
+- **Credit Prefab**
+  - `CesiumRectangleMapCredit_PLATEAU-BingMaps.prefab`
+
+`Tileset_PLATEAU-BingMaps.prefab` および `CesiumRectangleMapCredit_PLATEAU-BingMaps.prefab` は、`Packages\Spirare Cesium 3D Maps\Prefabs\PLATEAU` フォルダ内にあります。
+
+<img width="480" src={UnityPLATEAUBingMapsMapSettingsImage} />
+
+`BaseMapSettings` に複数のベースマップが設定されている場合、[管理ページを使って表示するマップを切り替える](#管理ページでのマップ設定変更)ことができます。
+
+#### PLATEAU 地形データと地理院タイル（オプション）
+
+PLATEAU 地形データと地理院タイルによる地図データの組み合わせをベースマップとして利用したい場合は以下の手順を行ってください。
+
+`Packages\Spirare Cesium 3D Maps\Prefabs\PLATEAU` フォルダ内の `Tileset_PLATEAU-GSI-std.prefab` を選択してください。
+
+<img width="480" src={UnityPLATEAUGSIstdAssetImage} />
+
+**Inspector** タブで **Cesium 3D Tileset** コンポーネントの **ion Access Token** 欄に Cesium ion のアクセストークンを入力してください。  
+入力するアクセストークンはお手持ちのアカウントのものを利用するか、
+[PLATEAU配信サービス](https://github.com/Project-PLATEAU/plateau-streaming-tutorial/blob/main/terrain/plateau-terrain-streaming.md#2-plateau-terrain%E3%81%AE%E5%88%A9%E7%94%A8%E6%96%B9%E6%B3%95)にて提供されているアクセストークンをご利用ください。
+
+<img width="360" src={UnityPLATEAUGSIstdInspectorImage} />
+
+トークンの設定ができたら、`Assets\Resources\Spirare\BaseMapSettings.asset` を選択し、`PLATEAU 地理院タイル標準地図` の項目を追加してください。
+
+- **Map Name**
+  - PLATEAU 地理院タイル標準地図
+- **Map Prefab**
+  - `Tileset_PLATEAU-GSI-std.prefab`
+- **Credit Prefab**
+  - `CesiumRectangleMapCredit_PLATEAU-GSI-std.prefab`
+
+`Tileset_PLATEAU-GSI-std.prefab` および `CesiumRectangleMapCredit_PLATEAU-GSI-std.prefab` は、`Packages\Spirare Cesium 3D Maps\Prefabs\PLATEAU` フォルダ内にあります。
+
+<img width="480" src={UnityPLATEAUGSIstdMapSettingsImage} />
+
+### プロジェクトのビルド
+
+プラットフォームを Android に変更し、ビルドと端末へのデプロイを行ってください。
+
+<img width="480" src={BuildSettings} />
+
+## 利用方法
+
+### マップの操作
+
+コントローラーでマップ土台の側面を操作することで、マップオブジェクトの移動、回転、拡大縮小ができます。  
+また、コントローラーでマップ土台の上面を操作することで、マップ表示範囲の移動や拡大縮小ができます。
+
+<img width="640" class="border" src={SpirareBrowserControllersImage} />
+
+### 管理ページの表示
+
+PC のブラウザで `http://<Meta Quest の IP アドレス>:8080` にアクセスし、管理ページを表示してください。  
+Meta Quest の IP アドレスは、Meta Qeust の設定メニューにて Wi-Fi を選択し、現在接続しているネットワークを選択することで確認できます。
+
+<img width="640" src={SpirareBrowserManagementPageTopImage} />
+
+### 管理ページでのマップ設定変更
+
+管理ページトップにて **Settings Page for Map** のリンクをクリックし、マップ設定ページに遷移してください。  
+
+<img width="640" src={SpirareBrowserManagementPageMapImage} />
+
+マップ設定ページでは、ベースマップの変更とマップ表示範囲の変更を行うことができます。
+
+#### ベースマップの変更
+**Base map** では、表示するマップの種類を指定します。  
+Unity Editor で設定した `BaseMapSettings.asset` に登録されているマップの中から選択することができます。
+
+#### マップ表示範囲の変更
+
+- **Latitude Longitude**
+  - マップの中心位置を緯度経度の順で指定します。
+- **Ellipsoidal height**
+  - マップの中心位置の楕円体高を指定します。**Auto adjust height** にチェックを入れる場合は、高さが自動で調整されるため変更不要です。
+- **Auto adjust height**
+  - チェックを入れると、ベースマップの高さに合わせてマップの高さが自動で調整されます。
+- **Map scale**
+  - マップのスケールを指定します。このスケールはマップオブジェクトの土台の幅を1mとしたときの倍率です。
+  マップオブジェクト自体のスケールを変更した場合には、見かけのスケールはマップオブジェクトのスケールとマップのスケールをかけ合わせたものになることにご注意ください。
+
+### ネットワークからの POML のロード
+
+管理ページの POML URL の入力欄に POML 配信先の URL を入力し、Load ボタンを押してください。
+
+<img width="640" src={SpirareBrowserManagementPagePomlLoadedImage} />
+
+### ローカルファイルからの POML のロード
+
+<SpirareBrowserQuest3DMapsPomlPlacement />
+
+配置した `.poml.zip` ファイルはアプリ起動時に自動的にロードされます。

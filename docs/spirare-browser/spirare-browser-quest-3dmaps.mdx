@@ -1,0 +1,120 @@
+---
+title: '[Meta Quest] 3D Maps'
+sidebar_position: 4
+---
+
+import CardLink from '@site/src/components/CardLink/cardLink'
+
+import SpirareBrowserCloneRepository from '@site/src/components/EmbeddedContent/en/spirare-browser-clone-repository.mdx'
+
+import BuildSettings from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_build-settings.png'
+import SpirareBrowserContentImage from '@site/docs/getting-started/img/arfoundation-marker_spirare-browser-content.png'
+import SpirareBrowserControllersImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_controllers.png'
+import SpirareBrowserManagementPageTopImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_management-page-top.png'
+import SpirareBrowserManagementPagePomlLoadedImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_management-page-poml-loaded.png'
+import SpirareBrowserManagementPageMapImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_management-page-map.png'
+import UnityPhotorealistic3DTilesSettingsImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_unity-photorealistic-3dtiles-settings.png'
+
+import SpirareBrowserQuest3DMapsPomlPlacement from '@site/src/components/EmbeddedContent/en/spirare-browser-quest-3dmaps-poml-placement.mdx'
+
+# Spirare Browser 3DMaps
+
+Spirare Browser 3DMaps is the 3D map version of the Spirare Browser app for Meta Quest.
+
+## Target Devices
+
+Meta Quest (Meta Quest 3 / Meta Quest 3S)
+
+## Install from Source
+
+### Clone the Repository
+
+<SpirareBrowserCloneRepository />
+
+### Open the Unity Project
+
+Please open the `unity/SpirareBrowser-Quest-3DMaps` folder in the Unity Editor.
+Please use Unity version 2022.3.16f1.
+
+### Configure the Base Map
+
+Configure the map objects displayed in the application by editing `Assets\Resources\Spirare\BaseMapSettings.asset`.
+
+#### Google Photorealistic 3D Tiles
+
+By default, the application is set to use the Photorealistic 3D Tiles provided by Google, but an API key is required.  
+Refer to the following documentation to obtain an API key:
+
+<CardLink
+  title="Use API Keys with Map Tiles API"
+  description="https://developers.google.com/maps/documentation/tile/get-api-key"
+  href="https://developers.google.com/maps/documentation/tile/get-api-key"
+/>
+
+<br/>
+
+Use the API key you obtained to set the **URL** field in `Assets\Resources\Spirare\GooglePhotorealistic3DTilesSourceSettings.asset` as shown below.
+Be sure to replace `<Your API Key>` with your actual key.
+
+`https://tile.googleapis.com/v1/3dtiles/root.json?key=<Your API Key>`
+
+<img width="480" src={UnityPhotorealistic3DTilesSettingsImage} />
+
+### Build the Project
+
+Change the platform to Android, and build and deploy the application to the device.
+
+<img width="480" src={BuildSettings} />
+
+## Usage
+
+### Manipulate the Map
+
+By operating the side of the map base with the controller, you can move, rotate, and scale the map object.  
+By operating the top of the map base with the controller, you can move and zoom the displayed area of the map.
+
+<img width="640" class="border" src={SpirareBrowserControllersImage} />
+
+### Display the Management Page
+
+On your PC’s browser, go to `http://<Meta Quest IP Address>:8080` to display the management page.
+You can check the Meta Quest’s IP address by opening the Settings menu, selecting Wi-Fi, and then choosing the network you’re currently connected to.
+
+<img width="640" src={SpirareBrowserManagementPageTopImage} />
+
+### Change Map Settings on the Management Page
+
+On the top of the management page, click **Settings Page for Map** to go to the map settings page.
+
+<img width="640" src={SpirareBrowserManagementPageMapImage} />
+
+On the map settings page, you can change the base map and the map display range.
+
+#### Change the Base Map
+
+In the **Base map** drop-down, specify which map to display.
+You can select from among the maps registered in `BaseMapSettings.asset`, which was configured in the Unity Editor.
+
+#### Change the Map Display Range
+
+- **Latitude Longitude**
+  - Specify the center position of the map in the order of latitude and longitude.
+- **Ellipsoidal height**
+  - Specify the ellipsoidal height for the center position of the map. If you select **Auto adjust height**, the height is automatically adjusted to the base map, so no manual change is necessary.
+- **Auto adjust height**
+  - When checked, the map’s height is automatically adjusted to match the height of the base map.
+- **Map scale**
+  - Specify the scale of the map. This scale is based on the assumption that the width of the map object’s base is 1 meter.
+  Note that if you change the scale of the map object itself, the apparent scale becomes the product of the map object’s scale and the map scale.
+
+### Load POML from a Network
+
+In the **POML URL** input field, enter the URL that delivers the POML, and press the **Load** button.
+
+<img width="640" src={SpirareBrowserManagementPagePomlLoadedImage} />
+
+### Load POML from a Local File
+
+<SpirareBrowserQuest3DMapsPomlPlacement />
+
+The `.poml.zip` files placed in the device will be automatically loaded when the app is launched.

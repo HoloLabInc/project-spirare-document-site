@@ -1,0 +1,94 @@
+---
+title: '[Meta Quest] 3D Maps'
+sidebar_position: 4
+---
+
+import CardLink from '@site/src/components/CardLink/cardLink'
+import SpirareEditorInstall from '@site/src/components/EmbeddedContent/en/spirare-editor-install.mdx'
+import SpirareEditorDesktopCreateGeodeticScene from '@site/src/components/EmbeddedContent/en/spirare-editor-desktop-create-geodetic-scene.mdx'
+import SpirareEditorDesktopGeoCameraTarget from '@site/src/components/EmbeddedContent/en/spirare-editor-desktop-geo-camera-target.mdx'
+import GettingStartedRequiredDevices from '@site/src/components/EmbeddedContent/en/getting-started-quest-required-devices.mdx'
+import GettingStartedContentPlacement from '@site/src/components/EmbeddedContent/en/getting-started-content-placement.mdx'
+import GettingStartedContentShare from '@site/src/components/EmbeddedContent/en/getting-started-content-share.mdx'
+
+import SpirareEditorContentImage from '@site/docs/getting-started/img/arfoundation-geospatial_spirare-editor-content.png'
+import SpirareEditorContentShareImage from '@site/docs/spirare-editor/img/geo-placement-content-share.png'
+import SpirareBrowserContentImage from '@site/docs/getting-started/img/quest-3dmaps_spirare-browser-content.png'
+import SpirareBrowserControllersImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_controllers.png'
+import SpirareBrowserManagementPageTopImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_management-page-top.png'
+import SpirareBrowserManagementPagePomlLoadedImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_management-page-poml-loaded.png'
+
+This guide explains how to create and display 3D content using Project Spirare.
+
+In this guide, Meta Quest is used as display devices, and 3D content is shown on a 3D Map.
+
+## Required Devices
+
+<GettingStartedRequiredDevices />
+
+Additionally, the Meta Quest and PC must be connected to the same network, and communication between them must be permitted.
+
+## Preparation
+
+### Install Spirare Browser
+
+You will need to build and install the 3D map version of the Spirare Browser app (display name `Spirare Browser 3DMaps`).
+Please refer to the [Install from Source](/spirare-browser/spirare-browser-quest-3dmaps.mdx#install-from-source) for installation instructions.
+
+## Create 3D Content
+
+### Create a Scene
+
+<SpirareEditorDesktopCreateGeodeticScene />
+
+### Change Camera Position
+
+<SpirareEditorDesktopGeoCameraTarget />
+
+### Place Objects
+
+<GettingStartedContentPlacement />
+
+<img width="640" src={SpirareEditorContentImage} />
+
+### Content Delivery
+
+<GettingStartedContentShare />
+
+<img width="640" src={SpirareEditorContentShareImage} />
+
+<br />
+
+Please proceed to the next steps with the Spirare Editor Desktop app open.
+
+## Display 3D Content
+
+### Check the Meta Quest IP Address
+
+In the Settings menu, select Wi-Fi, then choose the network you are currently connected to.
+Check the IP address which is displayed in the details of the connected network.
+
+### Launch the Spirare Browser App
+
+Please launch the 3D map version of the Spirare Browser app (display name `Spirare Browser 3DMaps`) on the Meta Quest.
+
+By operating the side of the map base with the controller, you can move, rotate, and scale the map object.  
+By operating the top of the map base with the controller, you can move and zoom the displayed area of the map.
+
+<img width="640" class="border" src={SpirareBrowserControllersImage} />
+
+### Load 3D Content with the Management Page
+
+On your PC’s browser, go to `http://<Meta Quest IP Address>:8080` to display the management page.
+
+<img width="640" src={SpirareBrowserManagementPageTopImage} />
+
+In the POML URL input field, enter the URL displayed in Spirare Editor Desktop (`http://<PC IP Address>:8080`), then click the Load button.
+
+<img width="640" src={SpirareBrowserManagementPagePomlLoadedImage} />
+
+The content will appear on the map in the Quest app.
+If the placed content is outside the visible area, move the map or zoom out to adjust the display range.
+
+<img width="640" class="border" src={SpirareBrowserContentImage} />
+<br />

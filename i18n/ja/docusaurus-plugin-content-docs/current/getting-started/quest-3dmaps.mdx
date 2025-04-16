@@ -1,0 +1,97 @@
+---
+title: '[Meta Quest] 3D マップ'
+sidebar_position: 4
+---
+
+import CardLink from '@site/src/components/CardLink/cardLink'
+import SpirareEditorInstall from '@site/src/components/EmbeddedContent/ja/spirare-editor-install.mdx'
+import SpirareEditorDesktopCreateGeodeticScene from '@site/src/components/EmbeddedContent/ja/spirare-editor-desktop-create-geodetic-scene.mdx'
+import SpirareEditorDesktopGeoCameraTarget from '@site/src/components/EmbeddedContent/ja/spirare-editor-desktop-geo-camera-target.mdx'
+import GettingStartedRequiredDevices from '@site/src/components/EmbeddedContent/ja/getting-started-quest-required-devices.mdx'
+import GettingStartedContentPlacement from '@site/src/components/EmbeddedContent/ja/getting-started-content-placement-3dmaps.mdx'
+import GettingStartedContentShare from '@site/src/components/EmbeddedContent/ja/getting-started-content-share.mdx'
+
+import SpirareEditorContentImage from '@site/docs/getting-started/img/arfoundation-geospatial_spirare-editor-content.png'
+import SpirareBrowserContentImage from '@site/docs/getting-started/img/quest-3dmaps_spirare-browser-content.png'
+import SpirareBrowserControllersImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_controllers.png'
+import SpirareEditorContentShareImage from '@site/docs/spirare-editor/img/geo-placement-content-share.png'
+import SpirareBrowserManagementPageTopImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_management-page-top.png'
+import SpirareBrowserManagementPagePomlLoadedImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_management-page-poml-loaded.png'
+
+Project Spirare を使って 3D コンテンツの作成と表示を行う方法についてのガイドです。  
+本ガイドでは、表示端末は Meta Quest を利用し、3D 地図上に 3D コンテンツを表示します。
+
+## 必要機材
+
+<GettingStartedRequiredDevices />
+
+また、Meta Quest と PC は同一ネットワークに接続されており、通信が許可されている必要があります。
+
+## 事前準備
+
+### Spirare Browser のインストール
+
+3D マップ版 Spirare Browser アプリ (表示名 `Spirare Browser 3DMaps`) のビルドとインストールが必要です。  
+ビルド手順は [ソースからのインストール](/spirare-browser/spirare-browser-quest-3dmaps.mdx#ソースからのインストール) を参照してください。
+
+### Spirare Editor Desktop のダウンロード
+
+<SpirareEditorInstall />
+
+## 3D コンテンツの作成
+
+### シーンの作成
+
+<SpirareEditorDesktopCreateGeodeticScene />
+
+### カメラ位置の変更
+
+<SpirareEditorDesktopGeoCameraTarget />
+
+### オブジェクトの配置
+
+<GettingStartedContentPlacement />
+
+<img width="640" src={SpirareEditorContentImage} />
+
+### コンテンツの配信
+
+<GettingStartedContentShare />
+
+<img width="640" src={SpirareEditorContentShareImage} />
+
+<br />
+
+Spirare Editor Desktop アプリは起動した状態のまま、次の手順に進んでください。
+
+## 3D コンテンツの表示
+
+### Meta Quest の IP アドレス確認
+
+設定メニューにて Wi-Fi を選択し、現在接続しているネットワークを選択してください。  
+接続しているネットワークの詳細情報が表示されるので、IP アドレスを確認してください。
+
+### Spirare Browser アプリの起動
+
+Meta Quest で 3D マップ版の Spirare Browser アプリ (表示名 `Spirare Browser 3DMaps`) を起動してください。
+
+コントローラーでマップ土台の側面を操作することで、マップオブジェクトの移動、回転、拡大縮小ができます。  
+また、コントローラーでマップ土台の上面を操作することで、マップ表示範囲の移動や拡大縮小ができます。
+
+<img width="640" class="border" src={SpirareBrowserControllersImage} />
+
+### 管理ページでのコンテンツロード
+
+PC のブラウザで `http://<Meta Quest の IP アドレス>:8080` にアクセスし、管理ページを表示してください。
+
+<img width="640" src={SpirareBrowserManagementPageTopImage} />
+
+POML URL の入力欄に Spirare Editor Desktop で表示された URL (`http://<PC の IP Address>:8080`) を入力し、Load ボタンを押してください。
+
+<img width="640" src={SpirareBrowserManagementPagePomlLoadedImage} />
+
+Quest アプリの地図上にコンテンツが表示されます。  
+コンテンツを配置した位置が表示エリアの範囲外の場合、地図の移動や縮小を行って表示範囲を調整してください。
+
+<img width="640" class="border" src={SpirareBrowserContentImage} />
+<br />
