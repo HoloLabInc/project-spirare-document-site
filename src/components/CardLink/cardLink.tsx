@@ -1,6 +1,6 @@
 import React from 'react'
 import Link from '@docusaurus/Link'
-import styles from './CardLink.module.css' // スタイルシートのインポート
+import styles from './CardLink.module.css'
 
 const CardLink = ({ title, description, href }) => (
   <div className={styles.card}>
