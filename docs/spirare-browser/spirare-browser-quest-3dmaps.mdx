@@ -36,14 +36,14 @@ Meta Quest (Meta Quest 3 / Meta Quest 3S)
 Please open the `unity/SpirareBrowser-Quest-3DMaps` folder in the Unity Editor.
 Please use Unity version 2022.3.16f1.
 
-### ベースマップの設定
+### Configure the Base Map
 
-アプリケーションで表示するマップオブジェクトは `Assets\Resources\Spirare\BaseMapSettings.asset` で設定します。
+Configure the map objects displayed in the application by editing `Assets\Resources\Spirare\BaseMapSettings.asset`.
 
 #### Google Photorealistic 3D Tiles
 
-初期状態では Google が提供する Photorealistic 3D Tiles を利用するオブジェクトが設定されていますが、利用するためには API キーの設定が必要です。  
-以下のドキュメントを参考に、API キーを取得してください。
+By default, the application is set to use the Photorealistic 3D Tiles provided by Google, but an API key is required.  
+Refer to the following documentation to obtain an API key:
 
 <CardLink
   title="Use API Keys with Map Tiles API"
@@ -53,7 +53,8 @@ Please use Unity version 2022.3.16f1.
 
 <br/>
 
-キーが取得できたら、`Assets\Resources\Spirare\GooglePhotorealistic3DTilesSourceSettings.asset` の URL 欄に以下のように設定してください（`<Your API Key>` の部分は取得した API キーに置き換えてください）。
+Use the API key you obtained to set the **URL** field in `Assets\Resources\Spirare\GooglePhotorealistic3DTilesSourceSettings.asset` as shown below.
+Be sure to replace `<Your API Key>` with your actual key.
 
 `https://tile.googleapis.com/v1/3dtiles/root.json?key=<Your API Key>`
 
