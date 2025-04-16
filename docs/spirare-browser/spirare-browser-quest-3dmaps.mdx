@@ -15,7 +15,7 @@ import SpirareBrowserManagementPagePomlLoadedImage from '@site/docs/spirare-brow
 import SpirareBrowserManagementPageMapImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_management-page-map.png'
 import UnityPhotorealistic3DTilesSettingsImage from '@site/docs/spirare-browser/img/spirare-browser-quest-3dmaps_unity-photorealistic-3dtiles-settings.png'
 
-import SpirareBrowserQuest3DMapsPomlPlacement from '@site/src/components/EmbeddedContent/ja/spirare-browser-quest-3dmaps-poml-placement.mdx'
+import SpirareBrowserQuest3DMapsPomlPlacement from '@site/src/components/EmbeddedContent/en/spirare-browser-quest-3dmaps-poml-placement.mdx'
 
 # Spirare Browser 3DMaps
 
@@ -33,9 +33,86 @@ Meta Quest (Meta Quest 3 / Meta Quest 3S)
 
 ### Open the Unity Project
 
-Please open the `unity/SpirareBrowser-ARFoundation-Marker` folder in the Unity Editor.
+Please open the `unity/SpirareBrowser-Quest-3DMaps` folder in the Unity Editor.
 Please use Unity version 2022.3.16f1.
+
+### ベースマップの設定
+
+アプリケーションで表示するマップオブジェクトは `Assets\Resources\Spirare\BaseMapSettings.asset` で設定します。
+
+#### Google Photorealistic 3D Tiles
+
+初期状態では Google が提供する Photorealistic 3D Tiles を利用するオブジェクトが設定されていますが、利用するためには API キーの設定が必要です。  
+以下のドキュメントを参考に、API キーを取得してください。
+
+<CardLink
+  title="Use API Keys with Map Tiles API"
+  description="https://developers.google.com/maps/documentation/tile/get-api-key"
+  href="https://developers.google.com/maps/documentation/tile/get-api-key"
+/>
+
+<br/>
+
+キーが取得できたら、`Assets\Resources\Spirare\GooglePhotorealistic3DTilesSourceSettings.asset` の URL 欄に以下のように設定してください（`<Your API Key>` の部分は取得した API キーに置き換えてください）。
+
+`https://tile.googleapis.com/v1/3dtiles/root.json?key=<Your API Key>`
+
+<img width="480" src={UnityPhotorealistic3DTilesSettingsImage} />
 
 ### Build the Project
 
-Change the platform to Android or iOS, and build and deploy the application to the device.
+Change the platform to Android, and build and deploy the application to the device.
+
+<img width="480" src={BuildSettings} />
+
+## Usage
+
+### Manipulate the Map
+
+By operating the side of the map base with the controller, you can move, rotate, and scale the map object.  
+By operating the top of the map base with the controller, you can move and zoom the displayed area of the map.
+
+<img width="640" class="border" src={SpirareBrowserControllersImage} />
+
+### Display the Management Page
+
+On your PC’s browser, go to `http://<Meta Quest IP Address>:8080` to display the management page.
+You can check the Meta Quest’s IP address by opening the Settings menu, selecting Wi-Fi, and then choosing the network you’re currently connected to.
+
+<img width="640" src={SpirareBrowserManagementPageTopImage} />
+
+### 管理ページでのマップ設定変更
+
+管理ページトップにて **Settings Page for Map** のリンクをクリックし、マップ設定ページに遷移してください。  
+
+<img width="640" src={SpirareBrowserManagementPageMapImage} />
+
+マップ設定ページでは、ベースマップの変更とマップ表示範囲の変更を行うことができます。
+
+#### ベースマップの変更
+**Base map** では、表示するマップの種類を指定します。  
+Unity Editor で設定した `BaseMapSettings.asset` に登録されているマップの中から選択することができます。
+
+#### マップ表示範囲の変更
+
+- **Latitude Longitude**
+  - マップの中心位置を緯度経度の順で指定します。
+- **Ellipsoidal height**
+  - マップの中心位置の楕円体高を指定します。**Auto adjust height** にチェックを入れる場合は、高さが自動で調整されるため変更不要です。
+- **Auto adjust height**
+  - チェックを入れると、ベースマップの高さに合わせてマップの高さが自動で調整されます。
+- **Map scale**
+  - マップのスケールを指定します。このスケールはマップオブジェクトの土台の幅を1mとしたときの倍率です。
+  マップオブジェクト自体のスケールを変更した場合には、見かけのスケールはマップオブジェクトのスケールとマップのスケールをかけ合わせたものになることにご注意ください。
+
+### Load POML from a Network
+
+In the **POML URL** input field, enter the URL that delivers the POML, and press the **Load** button.
+
+<img width="640" src={SpirareBrowserManagementPagePomlLoadedImage} />
+
+### Load POML from a Local File
+
+<SpirareBrowserQuest3DMapsPomlPlacement />
+
+The `.poml.zip` files placed in the device will be automatically loaded when the app is launched.
