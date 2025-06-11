@@ -1,0 +1,112 @@
+---
+title: '[Meta Quest] QR Alignment'
+sidebar_position: 4
+---
+
+import CardLink from '@site/src/components/CardLink/cardLink'
+
+import GettingStartedRequiredDevices from '@site/src/components/EmbeddedContent/en/getting-started-quest-required-devices.mdx'
+import SpirareBrowserAppInstall from '@site/src/components/EmbeddedContent/en/spirare-browser-quest-marker-app-install.mdx'
+import SpirareEditorInstall from '@site/src/components/EmbeddedContent/en/spirare-editor-install.mdx'
+import SpirareEditorDesktopCreateSpaceScene from '@site/src/components/EmbeddedContent/en/spirare-editor-desktop-create-space-scene.mdx'
+import SpirareEditorDesktopQRSetup from '@site/src/components/EmbeddedContent/en/spirare-editor-desktop-qr-setup.mdx'
+import GettingStartedContentPlacement from '@site/src/components/EmbeddedContent/en/getting-started-content-placement.mdx'
+import GettingStartedContentShare from '@site/src/components/EmbeddedContent/en/getting-started-content-share.mdx'
+import SpirareBrowserQRDetection from '@site/src/components/EmbeddedContent/en/spirare-browser-quest-marker-qr-detection.mdx'
+import GettingStartedLoadArContentFromSpirareEditorDesktop from '@site/src/components/EmbeddedContent/en/getting-started-quest-marker-load-ar-content-from-spirare-editor-desktop.mdx'
+
+import SpirareEditorContentImage from '@site/docs/getting-started/img/arfoundation-marker_spirare-editor-content.png'
+import SpirareEditorShareButtonImage from '@site/docs/getting-started/img/arfoundation-marker_spirare-editor-share-button.png'
+import SpirareBrowserMenuContentLoadImage from '@site/docs/getting-started/img/quest-marker_menu-content-load.png'
+import SpirareBrowserContentImage from '@site/docs/getting-started/img/quest-marker_spirare-browser-content.png'
+
+This guide explains how to create and display AR content using Project Spirare.
+
+In this guide, Meta Quest is used as display devices, and the QR Code marker is utilized for alignment.
+
+## Required Devices
+
+<GettingStartedRequiredDevices />
+
+Additionally, the Meta Quest and PC must be connected to the same network, and communication between them must be permitted.
+
+## Preparation
+
+### Install Spirare Browser
+
+Please install the **Spirare Browser Marker** app on your Meta Quest using one of the following methods.
+
+#### Install Prebuilt Application
+
+<SpirareBrowserAppInstall />
+
+#### Install from Source
+
+If you want to install from source, please refer to [Install from Source](/spirare-browser/spirare-browser-quest-marker.mdx#install-from-source).
+
+### Download Spirare Editor Desktop
+
+<SpirareEditorInstall />
+
+### Prepare the QR Code
+
+Please create a QR code that contains an alphanumeric string.
+The stored string will be used as an ID for alignment.
+
+In this guide, a printed PDF from the link below is used.
+The string contained in the QR code is `QR`.
+
+<CardLink
+  title="QR Code PDF file"
+  description="https://github.com/HoloLabInc/spirare-babylonjs/raw/190412db10dde907287c6241cf16c9f0c99827c2/_data/QR.pdf"
+  href="https://github.com/HoloLabInc/spirare-babylonjs/raw/190412db10dde907287c6241cf16c9f0c99827c2/_data/QR.pdf"
+/>
+
+## Create AR Content
+
+### Create a Scene
+
+<SpirareEditorDesktopCreateSpaceScene />
+
+### Set Up QR Marker Alignment
+
+<SpirareEditorDesktopQRSetup />
+
+### Place Objects
+
+<GettingStartedContentPlacement />
+
+<img width="640" src={SpirareEditorContentImage} />
+
+### Content Delivery
+
+<GettingStartedContentShare />
+
+<img width="640" src={SpirareEditorShareButtonImage} />
+
+<br />
+
+Please proceed to the next steps with the Spirare Editor Desktop app open.
+
+## Display AR Content
+
+Please launch the **Spirare Browser Marker** on the Meta Quest.
+
+Detecting a QR code and loading the AR content will display the AR content.
+You can perform these two steps in any order.
+
+### Detect QR Codes
+
+<SpirareBrowserQRDetection />
+
+### Load AR Content
+
+<GettingStartedLoadArContentFromSpirareEditorDesktop />
+
+<img width="480" class="border" src={SpirareBrowserMenuContentLoadImage} />
+
+<img width="480" class="border" src={SpirareBrowserContentImage} />
+
+## About Trademarks
+
+QR Code is registered trademark of DENSO WAVE INCORPORATED.
