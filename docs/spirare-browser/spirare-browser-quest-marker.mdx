@@ -1,0 +1,78 @@
+---
+title: '[Meta Quest] QR Alignment'
+sidebar_position: 4
+---
+
+import CardLink from '@site/src/components/CardLink/cardLink'
+
+import SpirareBrowserAppInstall from '@site/src/components/EmbeddedContent/en/spirare-browser-quest-marker-app-install.mdx'
+import SpirareBrowserCloneRepository from '@site/src/components/EmbeddedContent/en/spirare-browser-clone-repository.mdx'
+import SpirareBrowserQRDetection from '@site/src/components/EmbeddedContent/en/spirare-browser-quest-marker-qr-detection.mdx'
+import SpirareBrowserQuestMarkerPomlPlacement from '@site/src/components/EmbeddedContent/en/spirare-browser-quest-marker-poml-placement.mdx'
+
+import BuildSettings from '@site/docs/spirare-browser/img/spirare-browser-quest-marker_build-settings.png'
+import SpirareBrowserContentImage from '@site/docs/getting-started/img/arfoundation-marker_spirare-browser-content.png'
+import SpirareBrowserMenuContentLoad from '@site/docs/spirare-browser/img/spirare-browser-quest-marker_menu-content-load.png'
+import SpirareBrowserManagementPageTopImage from '@site/docs/spirare-browser/img/spirare-browser-quest-marker_management-page-top.png'
+
+# Spirare Browser Marker
+
+Spirare Browser Marker is the QR Code alignment version of the Spirare Browser app for Meta Quest.
+
+## Target Devices
+
+Meta Quest (Meta Quest 3 / Meta Quest 3S)
+
+## Install Prebuilt Application
+
+<SpirareBrowserAppInstall />
+
+## Install from Source
+
+### Clone the Repository
+
+<SpirareBrowserCloneRepository />
+
+### Open the Unity Project
+
+Please open the `unity/SpirareBrowser-Quest-Marker` folder in the Unity Editor.
+Please use Unity version 6000.0.16f1.
+
+### Build the Project
+
+Change the platform to Android, and build and deploy the application to the device.
+
+<img width="480" src={BuildSettings} />
+
+## Usage
+
+### Detect QR Codes
+
+<SpirareBrowserQRDetection />
+
+### Load POML from a Network
+
+Press the Menu button on the left controller to open the app menu.
+In the POML URL field, enter the URL that delivers the POML, and press the **Load** button.
+If the load succeeds, a **Loaded successfully** message will appear.
+
+<img width="480" class="border" src={SpirareBrowserMenuContentLoad} />
+
+### Loading POML via the Management Page
+
+You can also load POML from the network by entering its URL in the Management Page.
+
+Open the Management Page in a PC browser by navigating to `http://<Meta Quest IP address>:8080`.
+You can check the Meta Quest’s IP address by opening the Settings menu, selecting Wi-Fi, and then choosing the network you’re currently connected to.
+
+<img width="640" src={SpirareBrowserManagementPageTopImage} />
+
+### Load POML from a Local File
+
+<SpirareBrowserQuestMarkerPomlPlacement />
+
+The `.poml.zip` files placed in the device will be automatically loaded when the app is launched.
+
+## About Trademarks
+
+QR Code is registered trademark of DENSO WAVE INCORPORATED.

@@ -1,0 +1,77 @@
+---
+title: '[Meta Quest] QR 位置合わせ'
+sidebar_position: 4
+---
+
+import CardLink from '@site/src/components/CardLink/cardLink'
+
+import SpirareBrowserAppInstall from '@site/src/components/EmbeddedContent/ja/spirare-browser-quest-marker-app-install.mdx'
+import SpirareBrowserCloneRepository from '@site/src/components/EmbeddedContent/ja/spirare-browser-clone-repository.mdx'
+import SpirareBrowserQRDetection from '@site/src/components/EmbeddedContent/ja/spirare-browser-quest-marker-qr-detection.mdx'
+import SpirareBrowserQuestMarkerPomlPlacement from '@site/src/components/EmbeddedContent/ja/spirare-browser-quest-marker-poml-placement.mdx'
+
+import BuildSettings from '@site/docs/spirare-browser/img/spirare-browser-quest-marker_build-settings.png'
+import SpirareBrowserContentImage from '@site/docs/getting-started/img/arfoundation-marker_spirare-browser-content.png'
+import SpirareBrowserMenuContentLoad from '@site/docs/spirare-browser/img/spirare-browser-quest-marker_menu-content-load.png'
+import SpirareBrowserManagementPageTopImage from '@site/docs/spirare-browser/img/spirare-browser-quest-marker_management-page-top.png'
+
+# Spirare Browser Marker
+
+Spirare Browser Marker は Meta Quest 用、QR コード位置合わせバージョンの Spirare Browser アプリです。
+
+## 対象端末
+Meta Quest (Meta Quest 3 / Meta Quest 3S)
+
+## ビルド済みアプリケーションのインストール
+
+<SpirareBrowserAppInstall />
+
+## ソースからのインストール
+
+### リポジトリのクローン
+
+<SpirareBrowserCloneRepository />
+
+### Unity プロジェクトの起動
+
+`unity/SpirareBrowser-Quest-Marker` フォルダを Unity Editor で開いてください。  
+(Unity のバージョンは Unity 6000.0.16f1 を利用してください)
+
+### プロジェクトのビルド
+
+プラットフォームを Android に変更し、ビルドと端末へのデプロイを行ってください。
+
+<img width="480" src={BuildSettings} />
+
+## 利用方法
+
+### QR コードの認識
+
+<SpirareBrowserQRDetection />
+
+### ネットワークからの POML のロード
+
+左コントローラーのメニューボタンを押し、アプリメニューを開いてください。  
+POML URL の入力欄に POML 配信先の URL を入力し、**Load** ボタンを押してください。  
+ロードに成功すると、**Loaded successfully** というメッセージが表示されます。
+
+<img width="480" class="border" src={SpirareBrowserMenuContentLoad} />
+
+### 管理ページでの POML のロード
+
+管理ページにて URL を入力することでも、ネットワークからの POML ロードが可能です。
+
+管理ページは PC のブラウザで `http://<Meta Quest の IP アドレス>:8080` にアクセスすることで表示されます。  
+Meta Quest の IP アドレスは、Meta Qeust の設定メニューにて Wi-Fi を選択し、現在接続しているネットワークを選択することで確認できます。
+
+<img width="640" src={SpirareBrowserManagementPageTopImage} />
+
+### ローカルファイルからの POML のロード
+
+<SpirareBrowserQuestMarkerPomlPlacement />
+
+配置した `.poml.zip` ファイルはアプリ起動時に自動的にロードされます。
+
+## 商標について
+
+QR コードは(株)デンソーウェーブの登録商標です。
